@@ -1,4 +1,4 @@
-package com.xcz.baselib.utils;
+package com.xcz.baselib.utils.image;
 
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;

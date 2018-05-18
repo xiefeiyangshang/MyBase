@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.xcz.baselib.R;
 import com.xcz.baselib.mvp.BasePresenter;
+import com.xcz.baselib.utils.BaseAppUtils;
 import com.xcz.baselib.utils.ToastUtils;
 import com.xcz.baselib.utils.bar.AppBar;
 import com.xcz.baselib.utils.net.NetworkUtils;
@@ -24,7 +25,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
      * 将代理类通用行为抽出来
      */
     protected T mPresenter;
-
+    protected boolean needBackExit = false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,5 +122,15 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     private void initLeakCanary() {
 //        RefWatcher refWatcher = BaseApplication.getRefWatcher(this);
 //        refWatcher.watch(this);
+    }
+    @Override
+    public void onBackPressed() {
+        if (needBackExit) {
+            if (BaseAppUtils.exitApp()) {
+                super.onBackPressed();
+            }
+        } else {
+            super.onBackPressed();
+        }
     }
 }

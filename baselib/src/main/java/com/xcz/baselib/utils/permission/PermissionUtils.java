@@ -105,7 +105,7 @@ public final class PermissionUtils {
      * @param permissions 要请求的权限
      * @return {@link PermissionUtils}
      */
-    public static PermissionUtils permission(@Permission final String... permissions) {
+    public static PermissionUtils permission(@PermissionConstants.Permission final String... permissions) {
         return new PermissionUtils(permissions);
     }
 
@@ -204,7 +204,7 @@ public final class PermissionUtils {
             for (String permission : mPermissionsRequest) {
                 if (activity.shouldShowRequestPermissionRationale(permission)) {
                     getPermissionsStatus(activity);
-                    mOnRationaleListener.rationale(new ShouldRequest() {
+                    mOnRationaleListener.rationale(new OnRationaleListener.ShouldRequest() {
                         @Override
                         public void again(boolean again) {
                             if (again) {

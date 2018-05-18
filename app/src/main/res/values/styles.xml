@@ -3,5 +3,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppBaseTheme" />
 
+    <style name="SplashTheme" parent="SplashBaseTheme" />
 
 </resources>

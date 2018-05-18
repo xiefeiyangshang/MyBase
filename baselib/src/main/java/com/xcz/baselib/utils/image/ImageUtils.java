@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.xcz.baselib.R;
-import com.xcz.baselib.utils.GlideApp;
 import com.xcz.baselib.weight.CircleTransform;
 
 /**

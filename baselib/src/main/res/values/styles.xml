@@ -8,13 +8,17 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
     </style>
 
-    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowAnimationStyle">@style/ActivityBaseAnim</item>
     </style>
 
-    <style name="SplashBaseTheme" parent="android:Theme.Light.NoTitleBar.Fullscreen">
+    <style name="SplashBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
     <style name="Dialog" parent="@android:style/Theme.Dialog">

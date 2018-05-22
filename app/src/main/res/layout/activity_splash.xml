@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,4 +8,20 @@
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-</LinearLayout>
+
+    <com.xcz.baselib.weight.CountDownView
+        android:id="@+id/v_count_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        app:cd_animator_time="5"
+        app:cd_animator_time_unit="秒"
+        app:cd_arc_width="1dp"
+        app:cd_bg_color="#1A000000"
+        app:cd_location="top"
+        app:cd_retreat_type="forward"
+
+        />
+</RelativeLayout>

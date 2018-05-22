@@ -152,13 +152,13 @@ public class BannerView extends RelativeLayout {
         addView(mViewPager);
         type.recycle();
         if (hintMode == 0) {
-            initHint(new ColorPointHintView(getContext(), Color.parseColor("#E3AC42")
-                    , Color.parseColor("#88ffffff")));
+            initHint(new ColorPointHintView(getContext(), Color.parseColor("#DC143C")
+                    , Color.parseColor("#55333333")));
         } else if (hintMode == 1) {
             initHint(new TextHintView(getContext()));
         } else {
-            initHint(new ColorPointHintView(getContext(), Color.parseColor("#E3AC42")
-                    , Color.parseColor("#88ffffff")));
+            initHint(new ColorPointHintView(getContext(), Color.parseColor("#DC143C")
+                    , Color.parseColor("#55333333")));
         }
         initGestureDetector();
     }
@@ -533,7 +533,7 @@ public class BannerView extends RelativeLayout {
      * @param mode 样式：文字/红点
      */
     public void setHintMode(int mode) {
-
+        this.hintMode = mode;
     }
 
 

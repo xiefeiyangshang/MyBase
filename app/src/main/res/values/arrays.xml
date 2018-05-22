@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--首次启动页图-->
+    <string-array name="splash_image">
+        <item name="first">1</item>
+        <item name="second">2</item>
+        <item name="third">3</item>
+        <item name="four">4</item>
+    </string-array>
+</resources>

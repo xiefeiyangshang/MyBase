@@ -75,7 +75,6 @@ public class BannerView extends RelativeLayout {
     private View mHintView;
     private Timer timer;
 
-
     private HintViewDelegate mHintViewDelegate = new HintViewDelegate() {
         @Override
         public void setCurrentPosition(int position, BaseHintView hintView) {
@@ -169,7 +168,7 @@ public class BannerView extends RelativeLayout {
         mGestureDetector = new GestureDetector(getContext(),
                 new GestureDetector.SimpleOnGestureListener() {
                     @Override
-                    public boolean onSingleTapUp(MotionEvent e) {
+                    public boolean onSingleTapConfirmed(MotionEvent e) {
                         if (mOnItemClickListener != null) {
                             if (mAdapter instanceof AbsLoopPagerAdapter) {
                                 int i = mViewPager.getCurrentItem() % ((AbsLoopPagerAdapter) mAdapter).getRealCount();
@@ -179,6 +178,19 @@ public class BannerView extends RelativeLayout {
                             }
                         }
                         return super.onSingleTapUp(e);
+                    }
+
+                    @Override
+                    public boolean onDoubleTap(MotionEvent e) {
+                        if (mOnItemClickListener != null) {
+                            if (mAdapter instanceof AbsLoopPagerAdapter) {
+                                int i = mViewPager.getCurrentItem() % ((AbsLoopPagerAdapter) mAdapter).getRealCount();
+                                mOnItemClickListener.onItemDoubleClick(i);
+                            } else {
+                                mOnItemClickListener.onItemDoubleClick(mViewPager.getCurrentItem());
+                            }
+                        }
+                        return super.onDoubleTap(e);
                     }
                 });
     }
@@ -478,6 +490,7 @@ public class BannerView extends RelativeLayout {
         mGestureDetector.onTouchEvent(ev);
         return super.dispatchTouchEvent(ev);
     }
+
 
     /**
      * 轮播图点击事件

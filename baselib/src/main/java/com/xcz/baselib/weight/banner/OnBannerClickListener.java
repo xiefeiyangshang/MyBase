@@ -12,4 +12,6 @@ public interface OnBannerClickListener {
      * @param position 索引
      */
     void onItemClick(int position);
+
+    void onItemDoubleClick(int position);
 }

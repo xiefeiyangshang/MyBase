@@ -54,4 +54,5 @@ dependencies {
     implementation project(':baselib')
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation  'me.panpf:sketch:2.6.1'
 }

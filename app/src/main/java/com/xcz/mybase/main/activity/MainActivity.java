@@ -1,5 +1,6 @@
 package com.xcz.mybase.main.activity;
 
+import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,11 +13,13 @@ import com.xcz.baselib.weight.banner.OnBannerClickListener;
 import com.xcz.baselib.weight.banner.OnPageListener;
 import com.xcz.baselib.weight.banner.adapter.AbsDynamicPagerAdapter;
 import com.xcz.mybase.R;
+import com.xcz.mybase.web.activity.WebViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import me.panpf.sketch.SketchImageView;
 import me.panpf.sketch.request.DisplayOptions;
 
@@ -115,5 +118,16 @@ public class MainActivity extends BaseActivity {
             e.printStackTrace();
         }
         return result;
+    }
+    @OnClick({R.id.to_web})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.to_web:
+                Bundle bundle = new Bundle();
+                bundle.putString("name", "百度");
+                bundle.putString("url", "https://www.baidu.com");
+                startActivity(WebViewActivity.class, bundle);
+                break;
+        }
     }
 }

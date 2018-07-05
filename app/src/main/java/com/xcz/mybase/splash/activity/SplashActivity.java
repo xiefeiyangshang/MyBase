@@ -149,12 +149,9 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     private void initCountDownView() {
         countDown.setTime(5);
         countDown.start();
-        countDown.setOnLoadingFinishListener(new CountDownView.OnLoadingFinishListener() {
-            @Override
-            public void finish() {
-                if (countDown.isShown()) {
-                    toMainActivity();
-                }
+        countDown.setOnLoadingFinishListener(() -> {
+            if (countDown.isShown()) {
+                toMainActivity();
             }
         });
 

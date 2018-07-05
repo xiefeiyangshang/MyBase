@@ -10,4 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:id="@+id/to_web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转H5"
+        android:textColor="#000000" />
 </android.support.constraint.ConstraintLayout>

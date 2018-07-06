@@ -1,6 +1,7 @@
 package com.xcz.mybase.test.mvp;
 
 import com.xcz.baselib.mvp.BaseMvpView;
+import com.xcz.baselib.net.BaseResponse;
 import com.xcz.mybase.test.bean.WeatherBean;
 
 /**

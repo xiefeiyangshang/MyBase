@@ -2,8 +2,9 @@ package com.xcz.mybase.test.mvp;
 
 import com.xcz.baselib.mvp.BasePresenter;
 import com.xcz.baselib.mvp.RXCallController;
+import com.xcz.baselib.net.BaseResponse;
 import com.xcz.baselib.net.ExceptionHandle;
-import com.xcz.baselib.net.Observer;
+import com.xcz.baselib.net.NetSubscription;
 import com.xcz.mybase.net.RetrofitManager;
 import com.xcz.mybase.test.bean.WeatherBean;
 
@@ -26,14 +27,15 @@ public class TestPresenter extends BasePresenter<TestView> {
         RetrofitManager.getSingleton().getTestRetrofit().getWeather(cityName, "json", 1, "4f1ec0b03630e509e23c9f4ad1bbf61a")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<WeatherBean>() {
+                .subscribe(new NetSubscription<BaseResponse<WeatherBean>>() {
                     @Override
-                    public void OnSuccess(WeatherBean weatherBean) {
-                        mView.getDataSu(weatherBean);
+                    public void OnSuccess(BaseResponse<WeatherBean> data) {
+                        mView.getDataSu(data.data);
                     }
 
                     @Override
                     public void OnFail(ExceptionHandle.ResponeThrowable e) {
+
                     }
 
                     @Override

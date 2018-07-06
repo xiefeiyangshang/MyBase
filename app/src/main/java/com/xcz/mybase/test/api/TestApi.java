@@ -1,5 +1,6 @@
 package com.xcz.mybase.test.api;
 
+import com.xcz.baselib.net.BaseResponse;
 import com.xcz.mybase.test.bean.WeatherBean;
 
 import io.reactivex.Observable;
@@ -13,7 +14,7 @@ import retrofit2.http.Query;
  */
 public interface TestApi {
     @GET("weather/index")
-    Observable<WeatherBean> getWeather(
+    Observable<BaseResponse<WeatherBean>> getWeather(
             @Query("cityname") String cityName,
             @Query("dtype") String dtype,
             @Query("format") Integer fomart,

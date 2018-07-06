@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
  * Created by xcz
  * on 2018/7/6.
  */
-public abstract class Observer<BaseResponse> implements io.reactivex.Observer<BaseResponse> {
+public abstract class NetSubscription<T> implements io.reactivex.Observer<T> {
     @Override
     public void onSubscribe(Disposable d) {
         //添加订阅关系
@@ -15,7 +15,7 @@ public abstract class Observer<BaseResponse> implements io.reactivex.Observer<Ba
     }
 
     @Override
-    public void onNext(BaseResponse t) {
+    public void onNext(T t) {
         OnSuccess(t);
     }
 
@@ -30,7 +30,7 @@ public abstract class Observer<BaseResponse> implements io.reactivex.Observer<Ba
         OnCompleted();
     }
 
-    public abstract void OnSuccess(BaseResponse t);
+    public abstract void OnSuccess(T t);
 
     public abstract void OnFail(ExceptionHandle.ResponeThrowable e);
 

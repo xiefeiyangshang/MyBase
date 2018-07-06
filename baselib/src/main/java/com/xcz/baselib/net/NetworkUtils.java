@@ -1,4 +1,4 @@
-package com.xcz.baselib.utils.net;
+package com.xcz.baselib.net;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

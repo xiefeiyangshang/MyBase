@@ -17,7 +17,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -33,9 +32,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.xcz.baselib.activity.BaseActivity;
+import com.xcz.baselib.mvp.BasePresenter;
 import com.xcz.baselib.utils.ToastUtils;
 import com.xcz.baselib.utils.log.LogUtils;
-import com.xcz.baselib.utils.net.NetworkUtils;
+import com.xcz.baselib.net.NetworkUtils;
 import com.xcz.mybase.R;
 import com.xcz.mybase.web.view.ScrollWebView;
 
@@ -151,9 +151,6 @@ public class WebViewActivity extends BaseActivity {
         if (intent != null) {
             url = intent.getStringExtra("url");
             name = intent.getStringExtra("name");
-        } else {
-            url = "https://github.com/yangchong211";
-            name = "新闻";
         }
         toolbarTitle.setText(name);
     }
@@ -172,8 +169,12 @@ public class WebViewActivity extends BaseActivity {
 
     @Override
     public void initData() {
-//        mWebView.loadUrl(url);
-        mWebView.loadUrl("file:///android_asset/subject.html");
+        mWebView.loadUrl(url);
+    }
+
+    @Override
+    protected BasePresenter createPresenter() {
+        return null;
     }
 
 
@@ -251,6 +252,31 @@ public class WebViewActivity extends BaseActivity {
     public void hideCustomView() {
         webChromeClient.onHideCustomView();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    @Override
+    public void showMessage(String message) {
+
+    }
+
+    @Override
+    public void startLoading() {
+
+    }
+
+    @Override
+    public void stopLoading() {
+
+    }
+
+    @Override
+    public void noData() {
+
+    }
+
+    @Override
+    public void noNetWork() {
+
     }
 
 

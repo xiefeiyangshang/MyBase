@@ -7,11 +7,13 @@ import android.content.Context;
  * on 2018/5/15.
  */
 public interface BaseMvpView {
-    void showMsg(String msg);
+    void showMessage(String message);
 
     void startLoading();
 
     void stopLoading();
+
+    void noData();
 
     void noNetWork();
 

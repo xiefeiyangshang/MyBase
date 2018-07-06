@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.xcz.baselib.activity.BaseActivity;
+import com.xcz.baselib.mvp.BasePresenter;
 import com.xcz.baselib.utils.ActivityUtils;
 import com.xcz.baselib.utils.SizeUtil;
 import com.xcz.baselib.utils.bar.AppBar;
@@ -111,6 +112,11 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     }
 
     @Override
+    protected BasePresenter createPresenter() {
+        return null;
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.v_count_down:
@@ -119,7 +125,6 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
                 break;
         }
     }
-
     private class ImageNormalAdapter extends AbsDynamicPagerAdapter {
 
         @Override

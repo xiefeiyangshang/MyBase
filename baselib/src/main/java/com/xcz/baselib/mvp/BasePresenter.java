@@ -5,10 +5,11 @@ package com.xcz.baselib.mvp;
  * Created by xcz
  * on 2018/5/15.
  */
-public interface BasePresenter {
-    //绑定数据
-    void subscribe();
+public abstract class BasePresenter<T extends BaseMvpView> {
+    protected T mView;
 
-    //解除绑定
-    void unSubscribe();
+    public BasePresenter(T mView) {
+        this.mView = mView;
+    }
+
 }

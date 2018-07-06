@@ -1,19 +1,19 @@
 package com.xcz.mybase.main.activity;
 
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.xcz.baselib.activity.BaseActivity;
+import com.xcz.baselib.mvp.BasePresenter;
 import com.xcz.baselib.utils.SizeUtil;
 import com.xcz.baselib.weight.banner.BannerView;
 import com.xcz.baselib.weight.banner.OnBannerClickListener;
 import com.xcz.baselib.weight.banner.OnPageListener;
 import com.xcz.baselib.weight.banner.adapter.AbsDynamicPagerAdapter;
 import com.xcz.mybase.R;
-import com.xcz.mybase.web.activity.WebViewActivity;
+import com.xcz.mybase.test.activity.TestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +54,11 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected BasePresenter createPresenter() {
+        return null;
+    }
+
     private void initSketview(SketchImageView sketchImageView) {
         sketchImageView.displayResourceImage(R.mipmap.demo);
         DisplayOptions displayOptions = new DisplayOptions();
@@ -92,6 +97,7 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+
     private class ImageNormalAdapter extends AbsDynamicPagerAdapter {
 
         @Override
@@ -119,14 +125,15 @@ public class MainActivity extends BaseActivity {
         }
         return result;
     }
+
     @OnClick({R.id.to_web})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.to_web:
-                Bundle bundle = new Bundle();
-                bundle.putString("name", "百度");
-                bundle.putString("url", "https://www.baidu.com");
-                startActivity(WebViewActivity.class, bundle);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("name", "百度");
+//                bundle.putString("url", "http://awd.wyzwedu.com/bxxApis/download/free/BS18WL10ACQG/trialRead.html#/");
+                startActivity(TestActivity.class, null);
                 break;
         }
     }

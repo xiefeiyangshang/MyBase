@@ -1,6 +1,7 @@
 package com.xcz.mybase;
 
 import com.xcz.baselib.application.BaseApplication;
+import com.xcz.mybase.config.Constans;
 
 /**
  * desc:
@@ -11,5 +12,9 @@ public class MyApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        if (BuildConfig.DEBUG) {
+            Constans.HOST = Constans.HOST_ONLINE;
+        }
+
     }
 }

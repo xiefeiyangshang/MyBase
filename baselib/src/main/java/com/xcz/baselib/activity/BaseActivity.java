@@ -58,6 +58,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         RXCallController.getInstanceRx().cancelAll();
         //测试内存泄漏，正式一定要隐藏
         initLeakCanary();
+        if (mPresenter != null) {
+            mPresenter.detach();
+        }
     }
 
 

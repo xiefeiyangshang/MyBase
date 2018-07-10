@@ -6,8 +6,8 @@ package com.xcz.baselib.net;
  * on 2018/7/6.
  */
 public class BaseResponse<T> {
-    public int code;
-    public String message;
-    public T data;
-    public long serverTime = 0;
+    public int resultcode;
+    public String reason;
+    public T result;
+    public long error_code = 0;
 }

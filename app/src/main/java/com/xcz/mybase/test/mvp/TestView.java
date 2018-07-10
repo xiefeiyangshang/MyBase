@@ -1,8 +1,7 @@
 package com.xcz.mybase.test.mvp;
 
 import com.xcz.baselib.mvp.BaseMvpView;
-import com.xcz.baselib.net.BaseResponse;
-import com.xcz.mybase.test.bean.WeatherBean;
+import com.xcz.mybase.test.bean.ResultBean;
 
 /**
  * desc:
@@ -10,5 +9,5 @@ import com.xcz.mybase.test.bean.WeatherBean;
  * on 2018/7/6.
  */
 public interface TestView extends BaseMvpView {
-    void getDataSu(WeatherBean weatherBean);
+    void getDataSu(ResultBean weatherBean);
 }

@@ -12,4 +12,10 @@ public abstract class BasePresenter<T extends BaseMvpView> {
         this.mView = mView;
     }
 
+    public void detach() {
+        if (mView != null) {
+            mView = null;
+        }
+    }
+
 }

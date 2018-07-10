@@ -1,10 +1,10 @@
 package com.xcz.mybase.test.api;
 
 import com.xcz.baselib.net.BaseResponse;
-import com.xcz.mybase.test.bean.WeatherBean;
+import com.xcz.mybase.test.bean.ResultBean;
 
 import io.reactivex.Observable;
-import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
@@ -13,8 +13,8 @@ import retrofit2.http.Query;
  * on 2018/7/6.
  */
 public interface TestApi {
-    @GET("weather/index")
-    Observable<BaseResponse<WeatherBean>> getWeather(
+    @POST("weather/index")
+    Observable<BaseResponse<ResultBean>> getWeather(
             @Query("cityname") String cityName,
             @Query("dtype") String dtype,
             @Query("format") Integer fomart,

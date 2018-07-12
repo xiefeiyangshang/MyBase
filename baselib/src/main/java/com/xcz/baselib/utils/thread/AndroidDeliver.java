@@ -30,13 +30,10 @@ public class AndroidDeliver implements Executor {
         }
 
         //开启子线程
-        main.post(new Runnable() {
-            @Override
-            public void run() {
-                //注意：这里需要增加非空判断
-                if (runnable != null) {
-                    runnable.run();
-                }
+        main.post(() -> {
+            //注意：这里需要增加非空判断
+            if (runnable != null) {
+                runnable.run();
             }
         });
     }

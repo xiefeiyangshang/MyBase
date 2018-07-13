@@ -1,2 +1,2 @@
-# MyBase   ->采用mvp+retrofit+eventbus基本架构
-我的Android基类工程
+# MyBase   ->mvp+retrofit2+rxjava2
+我的mvp架构封装优化之路

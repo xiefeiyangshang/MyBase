@@ -1,7 +1,6 @@
 package com.xcz.mybase.test.mvp;
 
 import com.xcz.baselib.mvp.BasePresenter;
-import com.xcz.baselib.mvp.RXCallController;
 import com.xcz.baselib.net.BaseResponse;
 import com.xcz.baselib.net.ExceptionHandle;
 import com.xcz.baselib.net.NetSubscription;
@@ -40,13 +39,11 @@ public class TestPresenter extends BasePresenter<TestView> {
 
                     @Override
                     public void OnCompleted() {
-                        mView.stopLoading();
                     }
 
                     @Override
                     public void OnDisposable(Disposable d) {
-                        mView.startLoading();
-                        RXCallController.getInstanceRx().add(d);
+                        addDisposable(d);
                     }
                 });
 

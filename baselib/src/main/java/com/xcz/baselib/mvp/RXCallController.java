@@ -10,10 +10,9 @@ import io.reactivex.disposables.Disposable;
  * on 2018/7/6.
  */
 public class RXCallController implements RxCallControHelp<Object> {
-    private static RXCallController rxCallController;
     private CompositeDisposable compositeDisposable;
 
-    private RXCallController() {
+    public RXCallController() {
         if (compositeDisposable == null) {
             compositeDisposable = new CompositeDisposable();
         }
@@ -40,14 +39,5 @@ public class RXCallController implements RxCallControHelp<Object> {
         }
     }
 
-    public static RXCallController getInstanceRx() {
-        if (rxCallController == null) {
-            synchronized (RXCallController.class) {
-                if (rxCallController == null) {
-                    rxCallController = new RXCallController();
-                }
-            }
-        }
-        return rxCallController;
-    }
+
 }
